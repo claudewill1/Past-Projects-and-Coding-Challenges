@@ -5,7 +5,7 @@ import * as actions from '../actions';
 import ListItem from './ListItem';
 import "./style.css";
 
-class List extends Component {
+class ToDoList extends Component {
   state = {
     showForm: false,
     formValue: ""
@@ -94,4 +94,4 @@ const mapStateToProps = ({data}) => {
   }
 }
 
-export default connect(mapStateToProps, actions)(List);
+export default connect(mapStateToProps, actions)(ToDoList);

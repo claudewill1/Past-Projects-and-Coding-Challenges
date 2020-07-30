@@ -1,0 +1,3 @@
+const squareSum=numbers=>{
+    
+}

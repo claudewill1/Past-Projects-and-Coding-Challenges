@@ -1,6 +1,6 @@
 
 const clientId = process.env.REACT_APP_SECRET;
-const redirectUri = 'http://localhost:3000';
+const redirectUri = 'https://cjw87.surge.sh';
 
 let accessToken;
 const Spotify = {

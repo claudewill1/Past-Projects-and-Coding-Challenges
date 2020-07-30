@@ -1,0 +1,1 @@
+const myPow = (x,n) => Number.parseFloat(Math.pow(x,n)).toFixed(5);

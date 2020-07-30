@@ -3,12 +3,12 @@ import 'firebase/auth';
 import 'firebase/database';
 
 const config = {
-  apiKey:  'AIzaSyB7N5z5RzHFsjoXxck8pxKy8VaIgV2g6Iw',
-  authDomain: "react-firebase-auth-demo87.firebaseapp.com",
-  databaseURL: 'https://react-firebase-auth-demo87.firebaseio.com/',
-  projectId: 'react-firebase-auth-demo87',
-  storageBucket: "react-firebase-auth-demo87.appspot.com",
-  messagingSenderId: "1022443316340",
+  apiKey:  process.env.REACT_APP_API_KEY,
+  authDomain: REACT_APP_AUTH_DOMAIN,
+  databaseURL: REACT_APP_DATABASE_URL,
+  projectId: REACT_APP_PROJECT_ID,
+  storageBucket: REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: REACT_APP_MESSAGING_SENDER_ID,
 };
 
 class Firebase {
