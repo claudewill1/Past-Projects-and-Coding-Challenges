@@ -26,7 +26,28 @@ Note:
 
 */
 public class Solution {
+    
     public string LongestDupSubstring(string S){
-        long m = (Math.Pow(10,9)+7);
+        
+
     }
+    
+    public int search(int L, int a, long modulus, int n, int[] nums){
+        // compute hash
+        long h = 0;
+        for(int i = 0; i < L; i++) h=(h*a+nums[i])%modulus;
+        
+        // hashes of strings of length L which have already been seen
+        HashSet<long> seen = new HashSet<long>();
+        seen.Add(h);
+
+        // const value to be used often Math.Pow(a,L) % modulus
+        long aL = 1;
+        for (int i = 1; i <= L; i++) aL = (aL * a) % modulus;
+
+        for(int start = 1; start < n - L + 1; start++){
+            // in O(1) time compute rolling hash
+        }
+    }
+
 }

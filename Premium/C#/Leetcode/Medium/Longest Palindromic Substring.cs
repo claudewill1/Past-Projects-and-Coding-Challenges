@@ -19,34 +19,51 @@ Output: "bb"
 
 public class Solution {
     public string LongestPalindrome(string s){
+        // get length of input string
         int n = s.Length;
 
-        bool[, ] table = new bool[n,n];
+        //Table[i, j] will be false if substring
+        // str[i..j] is not palindrome. Else
+        // table[i, j] will be true;
+        bool[, ] tbl = new bool[n, n];
 
-        int maxLen = 1;
-        for(int i = 0; i < n; i++){
-            table[i, i] = true;
-        }
+        // All substrings of length 1 are palindromes
+        int maxLength = 1;
+        for(int i = 0; i < n; i++) tbl[i,i] = true;
 
-        // Check for length of sub-string of length 2
+        // Check for substring len 2
         int start = 0;
 
         for(int i = 0; i < n - 1; i++){
-            if(s[i]==s[i+1]){
-                table[i,i+1] = true;
+            if(s[i] == s[i + 1]){
+                tbl[i,i+1] = true;
                 start = i;
-                maxLen = 2;
+                maxLength = 2;
             }
         }
 
-        // Check for lengths greater than 2
-        // k is length of substring
+        // check for len > 2
+        // k is len of substring
         for(int k = 3; k <= n; k++){
-            // Fix the starting index
+            // fix the starting idx
             for(int i = 0; i < n - k + 1; i++){
-                // get the ending index of substring from
-                // starting index i and length k
+                // Get the ending idx of substring from
+                // starting idx i and len k
+                int j = i + k - 1;
+
+                // check for substring from ith idx
+                // to jth idx if char at string = i+1 to 
+                // str.charAt(j - 1) is a palindrome
+                if(table[i+1,j-1]&&s[i] == s[j]){
+                    tbl[i,j] = true;
+                    if(k > maxLength){
+                        start = i;
+                        maxLength = k;
+                    }
+                }
             }
         }
+        // return length of the longest palindrome string
+        return maxLength;
     }
 }
