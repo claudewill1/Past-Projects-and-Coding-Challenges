@@ -1,1 +1,1 @@
-# checkerboard code files
+# Codecademy and other projects
